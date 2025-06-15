@@ -39,9 +39,20 @@ export function setup() {
     return [];
   }
 
-  const json = res.json();
-  const values = json?.value || [];
-  const allIds = values.map((item) => item.ReferenceId);
+  let json = null;
+  try {
+    json = res.json();
+  } catch (e) {
+    console.error('Failed to parse JSON in setup():', e.message);
+    return [];
+  }
+
+  if (!json || !json.value || !Array.isArray(json.value)) {
+    console.error('Response JSON is not as expected:', JSON.stringify(json));
+    return [];
+  }
+
+  const allIds = json.value.map(item => item.ReferenceId);
   const shuffled = allIds.sort(() => 0.5 - Math.random());
 
   return shuffled.slice(0, 20);
