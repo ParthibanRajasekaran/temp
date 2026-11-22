@@ -1,14 +1,1 @@
-We have confirmed that native Claude plugin evaluations are blocked by managed plugin-loading and isolated authentication restrictions.
 
-Do not retry them, change managed settings, bypass trust restrictions or copy credentials into the evaluation sandbox.
-
-First, commit the verified Sonnet/Opus configuration changes and current evidence after reviewing the staged files.
-
-Then continue local Phase 2 work that does not require native model evaluations:
-1. Add an evaluation capability preflight that reports when native evaluations are unavailable and identifies the exact blocker.
-2. Provide a clearly labelled deterministic-only evaluation mode that runs available repository checks, contract validations and security tests without claiming model behaviour was tested.
-3. Continue improving independent verification, agent routing tests, first-run onboarding and dashboard accessibility.
-4. Ensure all three products work independently and that Grow Harness does not require Grow Agents or Preflight.
-5. Update the enterprise acceptance matrix, differentiating LOCAL_PASS, NOT_CHECKED, BLOCKED and NATIVE_EVAL_PASS.
-6. Prepare a sanitised technical evidence pack for the Claude Code platform team, including the observed permission and authentication failures and the specific approval needed.
-Do not advance enterprise readiness or publish anything until native evaluation and security approval requirements are met.
